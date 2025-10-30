@@ -1,2 +1,2 @@
 [env]
-RUST_LOG = "info,wgpu_hal::auxil::dxgi::exception=off"
+RUST_LOG = "bevy=info,farming_game=info,wgpu_hal::auxil::dxgi::exception=off"
