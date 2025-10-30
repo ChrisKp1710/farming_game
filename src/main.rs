@@ -1,8 +1,13 @@
 // src/main.rs
 use bevy::prelude::*;
+
 mod camera;
+mod sprite_test;
+mod player;
 
 use camera::CameraPlugin;
+use sprite_test::SpriteTestPlugin;
+use player::PlayerPlugin;
 
 fn main() {
     App::new()
@@ -21,8 +26,10 @@ fn main() {
             ..default()
         }))
         
-        // Il nostro plugin camera
+        // I nostri plugin custom
         .add_plugins(CameraPlugin)
+        .add_plugins(SpriteTestPlugin)
+        .add_plugins(PlayerPlugin)
         
         // Sistema di startup per messaggi di debug
         .add_systems(Startup, setup_debug)
@@ -36,5 +43,6 @@ fn setup_debug() {
     println!("Bevy funziona! 🦀🎮");
     info!("🌾 Farming Game inizializzato!");
     info!("📝 Camera 2D attiva");
-    info!("🎯 Pronto per aggiungere il player!");
+    info!("🎯 Player controllabile con WASD!");
+    info!("💡 Premi H per vedere i controlli");
 }
